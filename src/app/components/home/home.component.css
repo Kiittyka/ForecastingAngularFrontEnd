@@ -1,0 +1,21 @@
+.card {
+    width: max-content;
+}
+.col {
+    padding-right: 5;
+}
+.tab {
+    padding-right:45px;
+}
+span {
+    font-size: 14px;
+}
+.line {
+    border-left: 1px solid #d3d3d3;
+    height: 50px;
+}
+
+hr {
+    color: grey;
+    height: 1px;
+}
