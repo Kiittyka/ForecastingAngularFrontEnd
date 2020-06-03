@@ -1,15 +1,30 @@
+.col {
+    height: 50vh;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .col {
+        height: 100vh;
+    }
+}
+
 .card {
     width: max-content;
 }
-.col {
-    padding-right: 5;
+
+.rlpad {
+    padding: 0 10px;
 }
+
 .tab {
-    padding-right:45px;
+    padding-right: 45px;
 }
+
 span {
     font-size: 14px;
 }
+
 .line {
     border-left: 1px solid #d3d3d3;
     height: 50px;

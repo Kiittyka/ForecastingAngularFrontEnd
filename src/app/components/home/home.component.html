@@ -1,75 +1,83 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
   integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel dolor quam. Vestibulum imperdiet vulputate eros
-    in pharetra. Nunc dapibus quis ex eu consequat. Nunc fringilla aliquam nibh, vitae aliquam elit cursus sit amet.
-    Cras in nunc sagittis, finibus quam consectetur, efficitur purus. Curabitur interdum vel massa ac varius.</p>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">COVID 19 Updates</h5>
-      <table>
-        <thead><i class="fas fa-globe"></i> Worldwide</thead>
-        <tbody>
-          <tr>
-            <td>
-              <div>
-                <span>Confirmed</span>
-                <p>10000</p>
-              </div>
-            </td>
-            <td>
-              <div class="line"></div>
-            </td>
-            <td>
-              <div class="col">
-                <span>Recovered</span>
-                <p>10000</p>
-              </div>
-            </td>
-            <td>
-              <div class="line"></div>
-            </td>
-            <td>
-              <div class="col">
-                <span>Deaths</span>
-                <p>10000</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <table>
-        <thead><img src="../../../assets/flag.png" /><span class="tab"> India</span></thead>
-        <tbody>
-          <tr>
-            <td>
-              <div>
-                <span>Confirmed</span>
-                <p>10000</p>
-              </div>
-            </td>
-            <td>
-              <div class="line"></div>
-            </td>
-            <td>
-              <div class="col">
-                <span>Recovered</span>
-                <p>10000</p>
-              </div>
-            </td>
-            <td>
-              <div class="line"></div>
-            </td>
-            <td>
-              <div class="col">
-                <span>Deaths</span>
-                <p>10000</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+  <div class="row no-gutter">
+    <div class="col-md-6 no-gutter d-flex justify-content align-items-center">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel dolor quam. Vestibulum imperdiet vulputate
+        eros
+        in pharetra. Nunc dapibus quis ex eu consequat. Nunc fringilla aliquam nibh, vitae aliquam elit cursus sit amet.
+        Cras in nunc sagittis, finibus quam consectetur, efficitur purus. Curabitur interdum vel massa ac varius.</p>
+    </div>
+    <div class="col-md-6 no-gutter d-flex justify-content align-items-center">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">COVID 19 Updates</h5>
+          <table>
+            <thead><i class="fas fa-globe"></i> Worldwide</thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>
+                    <span>Confirmed</span>
+                    <p>{{totalCount.TotalConfirmed}}</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="line"></div>
+                </td>
+                <td>
+                  <div class="rlpad">
+                    <span>Recovered</span>
+                    <p>{{totalCount.TotalRecovered}}</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="line"></div>
+                </td>
+                <td>
+                  <div class="rlpad">
+                    <span>Deaths</span>
+                    <p>{{totalCount.TotalDeaths}}</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <table>
+            <thead><img src="../../../assets/flag.png" /><span class="tab"> India</span></thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>
+                    <span>Confirmed</span>
+                    <p>{{countryCount.TotalDeaths}}</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="line"></div>
+                </td>
+                <td>
+                  <div class="rlpad">
+                    <span>Recovered</span>
+                    <p>{{countryCount.TotalRecovered}}</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="line"></div>
+                </td>
+                <td>
+                  <div class="rlpad">
+                    <span>Deaths</span>
+                    <p>{{countryCount.TotalDeaths}}</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

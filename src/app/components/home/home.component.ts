@@ -9,27 +9,20 @@ import { figures } from '../../classes/figures'
 })
 export class HomeComponent implements OnInit {
 
-  indianCount: Array<figures>;
-  globalCount: Array<figures>;
+  totalCount: Array<figures>
+  countryCount: Array<figures>
 
   constructor(private service: DataService) { }
 
   ngOnInit() {
-    /*this.service.getIndianData()
+    this.service.getData()
       .subscribe(
         data => {
-          this.indianCount = data.results;
-          console.log(data)
+          this.totalCount = data['Global'];
+          this.countryCount = data['Countries'][76];
+          console.log(this.totalCount)
+          console.log(this.countryCount)
         }
       );
-
-    this.service.getGlobalData()
-      .subscribe(
-        data => {
-          this.globalCount = data.results;
-          console.log(data)
-        }
-      );
-    */
   }
 }

@@ -10,10 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getIndianData(): Observable<any> {
-    return this.http.get('')
-  }
-  getGlobalData(): Observable<any> {
-    return this.http.get('')
+  getData(): Observable<any> {
+    return this.http.get('https://withackfunctions.azurewebsites.net/api/CovidSummary')
   }
 }
