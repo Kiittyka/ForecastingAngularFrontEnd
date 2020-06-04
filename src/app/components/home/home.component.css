@@ -10,7 +10,10 @@
 }
 
 .card {
+    margin: 40px auto;
     width: max-content;
+    float: none; 
+    margin-bottom: 10px; 
 }
 
 .rlpad {

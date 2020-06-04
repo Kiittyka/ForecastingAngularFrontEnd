@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  user: any = {};
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
+    $("#entityType").change(function () {
+      var correspondingID = $(this).val()
+      $(".style-sub-1").hide();
+      $("#" + correspondingID).show();
+    })
   }
 
+  createUser() {
+    console.log(this.user)
+    this.dataService.createUsers(this.user).subscribe((res) => {
+    });
+  }
 }
+

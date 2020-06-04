@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Username</label>
+                        <input [(ngModel)]="user.username" type="email" name="username" class="form-control"
+                            id="username" aria-describedby="nameHelp" placeholder="Enter your email">
+                        <small id="nameHelp" class="form-text text-muted">Enter your email</small>
+
+                        <label for="password">Password</label>
+                        <input [(ngModel)]="user.password" type="password" name="password" class="form-control"
+                            id="password" aria-describedby="passwordHelp" placeholder="Enter your password">
+                        <small id="passwordHelp" class="form-text text-muted">Enter your password</small>
+                    </div>
+                </form>
+                <button class="btn btn-primary" (click)="validateUser()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
