@@ -29,6 +29,7 @@ export class DataService {
           this.router.navigate(['/login']);
           return data;
         }), catchError(error => {
+          this.router.navigate(['/error']);
           return throwError('Something went wrong!');
         })
       )
@@ -43,6 +44,7 @@ export class DataService {
           this.router.navigate(['/upload']);
           return data;
         }), catchError(error => {
+          this.router.navigate(['/error']);
           return throwError('Something went wrong!');
         })
       )
@@ -61,6 +63,7 @@ export class DataService {
           // this.router.navigate(['/upload']);
           return data;
         }), catchError(error => {
+          this.router.navigate(['/error']);
           return throwError('Something went wrong!');
         })
       )

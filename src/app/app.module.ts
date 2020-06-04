@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { UploadComponent } from './components/upload/upload.component';
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
-    UploadComponent
+    UploadComponent,
+    ErrorPageComponent
 
   ],
   imports: [
