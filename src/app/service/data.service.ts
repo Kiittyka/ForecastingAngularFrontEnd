@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Users } from '../classes/users';
 import { Router } from '@angular/router';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +14,18 @@ export class DataService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  /* Get COVID-19 figures */
   getData(): Observable<any> {
     return this.http.get('https://withackfunctions.azurewebsites.net/api/CovidSummary')
   }
 
+  /* Registration */
   createUsers(user: Users[]) {
     return this.http.post('http://withackfunctions.azurewebsites.net/api/UserRegistration', user).
       pipe(
         map((data: any) => {
           console.log("Success:", user)
-          swal("Success!", "Registered Successfully!", "success");    /*alert*/
+          Swal.fire("Success!", "Registered Successfully!", "success");    /* alert */
           this.router.navigate(['/login']);
           return data;
         }), catchError(error => {
@@ -32,12 +34,31 @@ export class DataService {
       )
   }
 
+  /* Login */
   validateUsers(user) {
     return this.http.get('http://withackfunctions.azurewebsites.net/api/UserLogin/' + user.username + '/' + user.password).
       pipe(
         map((data: any) => {
-          swal("Success!", "Logged in Successfully!", "success");      /*alert*/
+          Swal.fire("Success!", "Logged in Successfully!", "success");      /* alert */
           this.router.navigate(['/upload']);
+          return data;
+        }), catchError(error => {
+          return throwError('Something went wrong!');
+        })
+      )
+  }
+
+  /* Upload File */
+  postFile(fileToUpload: File): Observable<boolean> {
+    const endpoint = 'http://withackfunctions.azurewebsites.net/api/BlobUpload';
+    const formData: FormData = new FormData();
+    formData.append('fileKey', fileToUpload, fileToUpload.name);
+    return this.http
+      .post(endpoint, formData).
+      pipe(
+        map((data: any) => {
+          Swal.fire("Success!", "Data Upload Successful!", "success");      /* alert */
+          // this.router.navigate(['/upload']);
           return data;
         }), catchError(error => {
           return throwError('Something went wrong!');

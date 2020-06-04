@@ -9,8 +9,8 @@ import { figures } from '../../classes/figures'
 })
 export class HomeComponent implements OnInit {
 
-  totalCount: Array<figures>
-  countryCount: Array<figures>
+  totalCount: figures = new figures()
+  countryCount: figures = new figures()
 
   constructor(private service: DataService) { }
 

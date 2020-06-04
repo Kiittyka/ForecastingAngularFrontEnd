@@ -5,5 +5,4 @@ export class figures {
     TotalRecovered: number;
     NewDeaths: number;
     TotalDeaths: number;
-
 }
