@@ -1,8 +1,13 @@
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="formControlFile">Upload Data</label>
-            <input type="file" class="form-control-file" id="formControlFile"  (change)="handleFileInput($event.target.files)">
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="formControlFile" style="font-size: 24px">Upload Data</label>
+                    <input type="file" class="form-control-file" id="formControlFile"
+                        (change)="handleFileInput($event.target.files)">
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>

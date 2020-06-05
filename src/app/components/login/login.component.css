@@ -1,4 +1,8 @@
-.container {
-    min-height: 75vh;
+.container-fluid {
+    height: 100vh;
+    background-image: url("../../../assets/double-bubble.png");
+}
 
+.card {
+    margin: 50px 0;
 }

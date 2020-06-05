@@ -1,4 +1,5 @@
-.container {
+.container-fluid {
     min-height: 90vh;
     padding-top: 100px;
+    background: url("../../../assets/double-bubble.png");
 }

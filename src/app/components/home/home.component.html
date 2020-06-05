@@ -1,83 +1,113 @@
+<!-- LINKS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
   integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<div class="jumbotron" style="background-color: #fff; height: calc(83vh);">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
 
+<div class="container-fluid">
   <div class="row no-gutter">
-    <div class="col-md-6 no-gutter d-flex justify-content align-items-center">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel dolor quam. Vestibulum imperdiet vulputate
-        eros
-        in pharetra. Nunc dapibus quis ex eu consequat. Nunc fringilla aliquam nibh, vitae aliquam elit cursus sit amet.
-        Cras in nunc sagittis, finibus quam consectetur, efficitur purus. Curabitur interdum vel massa ac varius.
-        <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=us-south&integrationID=48c0a3f3-453e-4c98-a7ce-f5061406a0e1&serviceInstanceID=50cf4bbe-a160-4b6d-8944-a4f9234c4a1b">Chatbot link</a></p>
+    <div class="col-md-6 no-gutter img-div d-flex justify-content align-items-center">
+      <img src="../../../assets/landing-page-image.jpg" alt="landing-page-image" />
     </div>
     <div class="col-md-6 no-gutter d-flex justify-content align-items-center">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">COVID 19 Updates</h5>
-          <table>
-            <thead><i class="fas fa-globe"></i> Worldwide</thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div>
-                    <span>Confirmed</span>
-                    <p>{{totalCount.TotalConfirmed}}</p>
-                    <!-- <span>+ {{totalCount.NewConfirmed}}</span> -->
-                  </div>
-                </td>
-                <td>
-                  <div class="line"></div>
-                </td>
-                <td>
-                  <div class="rlpad">
-                    <span>Recovered</span>
-                    <p>{{totalCount.TotalRecovered}}</p>
-                  </div>
-                </td>
-                <td>
-                  <div class="line"></div>
-                </td>
-                <td>
-                  <div class="rlpad">
-                    <span>Deaths</span>
-                    <p>{{totalCount.TotalDeaths}}</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <hr>
-          <table>
-            <thead><img src="../../../assets/flag.png" /><span class="tab"> India</span></thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div>
-                    <span>Confirmed</span>
-                    <p>{{countryCount.TotalConfirmed}}</p>
-                  </div>
-                </td>
-                <td>
-                  <div class="line"></div>
-                </td>
-                <td>
-                  <div class="rlpad">
-                    <span>Recovered</span>
-                    <p>{{countryCount.TotalRecovered}}</p>
-                  </div>
-                </td>
-                <td>
-                  <div class="line"></div>
-                </td>
-                <td>
-                  <div class="rlpad">
-                    <span>Deaths</span>
-                    <p>{{countryCount.TotalDeaths}}</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <p class="text">Using analytics data and AI for food crisis management lets you respond both proactively and
+        reactively to the hunger crisis gripping the entire country.<br />
+        <button type="button" class="btn btn-lg btn-info" style="margin-top: 10px" data-toggle="modal"
+          data-target="#exampleModal">
+          Show COVID19 case overview
+        </button>
+        <a
+          href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=us-south&integrationID=938e7137-9d5b-4298-91c3-a10ea93043a8&serviceInstanceID=50cf4bbe-a160-4b6d-8944-a4f9234c4a1b">\
+          <button type="button" class="btn btn-lg btn-success" style="margin-top: 10px; margin-left: 5px">
+            Request/ Donate Food
+          </button>
+        </a>
+      </p>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COVID 19 Updates</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table>
+                <thead><i class="fas fa-globe"></i> Worldwide</thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>
+                        <span>Confirmed</span>
+                        <p>{{totalCount.TotalConfirmed}}</p>
+                        <span class="newCount">+ {{totalCount.NewConfirmed}}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="line"></div>
+                    </td>
+                    <td>
+                      <div class="rlpad">
+                        <span>Recovered</span>
+                        <p>{{totalCount.TotalRecovered}}</p>
+                        <span class="newCount">+ {{totalCount.NewRecovered}}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="line"></div>
+                    </td>
+                    <td>
+                      <div class="rlpad">
+                        <span>Deaths</span>
+                        <p>{{totalCount.TotalDeaths}}</p>
+                        <span class="newCount">+ {{totalCount.NewDeaths}}</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr>
+              <table>
+                <thead><img src="../../../assets/flag.png" /><span class="tab"> India</span></thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>
+                        <span>Confirmed</span>
+                        <p>{{countryCount.TotalConfirmed}}</p>
+                        <span class="newCount">+ {{countryCount.NewConfirmed}}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="line"></div>
+                    </td>
+                    <td>
+                      <div class="rlpad">
+                        <span>Recovered</span>
+                        <p>{{countryCount.TotalRecovered}}</p>
+                        <span class="newCount">+ {{countryCount.NewRecovered}}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="line"></div>
+                    </td>
+                    <td>
+                      <div class="rlpad">
+                        <span>Deaths</span>
+                        <p>{{countryCount.TotalDeaths}}</p>
+                        <span class="newCount">+ {{countryCount.NewDeaths}}</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

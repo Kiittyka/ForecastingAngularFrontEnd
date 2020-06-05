@@ -21,7 +21,7 @@ export class DataService {
 
   /* Registration */
   createUsers(user: Users[]) {
-    return this.http.post('http://withackfunctions.azurewebsites.net/api/UserRegistration', user).
+    return this.http.post('https://withackfunctions.azurewebsites.net/api/UserRegistration', user).
       pipe(
         map((data: any) => {
           console.log("Success:", user)
@@ -37,10 +37,13 @@ export class DataService {
 
   /* Login */
   validateUsers(user) {
-    return this.http.get('http://withackfunctions.azurewebsites.net/api/UserLogin/' + user.username + '/' + user.password).
+    return this.http.get('https://withackfunctions.azurewebsites.net/api/UserLogin/' + user.username + '/' + user.password).
       pipe(
         map((data: any) => {
           Swal.fire("Success!", "Logged in Successfully!", "success");      /* alert */
+          if(user.username == 'admin@gmail.com')
+            this.router.navigate(['/dashboard']);
+          else
           this.router.navigate(['/upload']);
           return data;
         }), catchError(error => {
@@ -52,7 +55,7 @@ export class DataService {
 
   /* Upload File */
   postFile(fileToUpload: File): Observable<boolean> {
-    const endpoint = 'http://withackfunctions.azurewebsites.net/api/BlobUpload';
+    const endpoint = 'https://withackfunctions.azurewebsites.net/api/BlobUpload';
     const formData: FormData = new FormData();
     formData.append('fileKey', fileToUpload, fileToUpload.name);
     return this.http
