@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service'
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: DataService) { }
 
   ngOnInit() {
+
   }
 
+  logout() {
+    this.service.isLoggedIn = false;
+    this.service.isAdmin = false;
+  }
 }

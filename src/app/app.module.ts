@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AuthGuardService } from './service/auth-guard.service';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AuthGuardService } from './service/auth-guard.service';
     LoginComponent,
     DashboardComponent,
     UploadComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LogoutComponent
 
   ],
   imports: [

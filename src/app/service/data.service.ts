@@ -12,7 +12,8 @@ import Swal from 'sweetalert2';
 
 export class DataService {
 
-  loggedIn: boolean = false;
+  public isLoggedIn: boolean = false;
+  public isAdmin = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -43,9 +44,11 @@ export class DataService {
       pipe(
         map((data: any) => {
           Swal.fire("Success!", "Logged in Successfully!", "success");      /* alert */
-          this.loggedIn = true;
-          if (user.username == 'admin@gmail.com')
-            this.router.navigate(['/dashboard']);
+          this.isLoggedIn = true;
+          if (user.username == 'admin@gmail.com') {
+            this.isAdmin = true;
+            this.router.navigate(['/upload']);
+          }
           else
             this.router.navigate(['/upload']);
           return data;
@@ -57,15 +60,20 @@ export class DataService {
   }
 
   /* Check if user logged in*/
-  isValid() {
-    console.log(this.loggedIn)
-    return this.loggedIn;
+  isUserLogged() {
+    return this.isLoggedIn;
+  }
+
+  /* Check if admin*/
+  checkUser() {
+    return this.isAdmin;
   }
 
   /* Upload File */
   postFile(fileToUpload: File): Observable<boolean> {
     const endpoint = 'https://withackfunctions.azurewebsites.net/api/BlobUpload';
     const formData: FormData = new FormData();
+
     formData.append('fileKey', fileToUpload, fileToUpload.name);
     return this.http
       .post(endpoint, formData).
