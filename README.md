@@ -2,9 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-## Architecture Diagram
-
-![Architecture Diagram](/images/architecture-diagram.png)
+## Description
+This application aids in food crisis management using Analytics and AI.
 
 ## Development server
 
