@@ -3,3 +3,38 @@
     padding-top: 100px;
     background: url("../../../assets/double-bubble.png");
 }
+/* MODAL STYLING */
+p {
+    margin-bottom: 0;
+}
+
+.modal-content {
+    width: 325px;
+}
+.rlpad {
+    padding: 0 10px;
+}
+
+.tab {
+    padding-right: 45px;
+}
+
+span {
+    font-size: 14px;
+}
+
+.line {
+    border-left: 1px solid #d3d3d3;
+    height: 80px;
+}
+
+hr {
+    color: grey;
+    height: 1px;
+}
+
+.newCount {
+    font-size: 10;
+    color: salmon;
+    padding-left: 5px;
+}

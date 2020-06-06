@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
+import { figures } from '../../classes/figures'
 
 @Component({
   selector: 'app-upload',
@@ -10,9 +11,21 @@ export class UploadComponent implements OnInit {
 
   fileToUpload: File = null;
 
+  totalCount: figures = new figures()
+  countryCount: figures = new figures()
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getData()
+      .subscribe(
+        data => {
+          this.totalCount = data['Global'];
+          this.countryCount = data['Countries'][76];
+          console.log(this.totalCount)
+          console.log(this.countryCount)
+        }
+      );
   }
 
   handleFileInput(files: FileList) {
