@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     FormsModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

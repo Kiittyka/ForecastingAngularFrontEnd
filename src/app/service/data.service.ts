@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 
 export class DataService {
 
+  loggedIn: boolean = false;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   /* Get COVID-19 figures */
@@ -41,16 +43,23 @@ export class DataService {
       pipe(
         map((data: any) => {
           Swal.fire("Success!", "Logged in Successfully!", "success");      /* alert */
-          if(user.username == 'admin@gmail.com')
+          this.loggedIn = true;
+          if (user.username == 'admin@gmail.com')
             this.router.navigate(['/dashboard']);
           else
-          this.router.navigate(['/upload']);
+            this.router.navigate(['/upload']);
           return data;
         }), catchError(error => {
           this.router.navigate(['/error']);
           return throwError('Something went wrong!');
         })
       )
+  }
+
+  /* Check if user logged in*/
+  isValid() {
+    console.log(this.loggedIn)
+    return this.loggedIn;
   }
 
   /* Upload File */
